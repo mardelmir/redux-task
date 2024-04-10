@@ -1,8 +1,8 @@
+import './App.css'
 import TaskForm from './components/TaskForm.jsx'
 import Tasks from './components/Tasks.jsx'
 
-function App() {
-
+export default function App() {
   return (
     <>
       <h1>Lista de tareas</h1>
@@ -11,5 +11,3 @@ function App() {
     </>
   );
 };
-
-export default App;

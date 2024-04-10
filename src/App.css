@@ -1,7 +1,29 @@
 #root {
   display: flex;
-  justify-content: center;
-  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 100%;
   margin: 0 auto;
-  text-align: center;
+}
+
+.list {
+  padding: 0px;
+  min-width: 200px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  p,
+  img {
+    margin: 6px;
+    cursor: pointer;
+  }
+}
+
+.task img:hover {
+  filter: invert(26%) sepia(90%) saturate(3821%) hue-rotate(335deg) brightness(83%) contrast(110%)
 }
