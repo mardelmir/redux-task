@@ -15,7 +15,6 @@ export const todoSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            console.log(action.payload)
             state.todo = [...state.todo, {
                 id: uuidv4(),
                 text: action.payload,
@@ -23,8 +22,7 @@ export const todoSlice = createSlice({
             }]
         },
         deleteTask: (state, action) => {
-            console.log(state)
-            console.log(action.payload)
+            state.todo = state.todo.filter(task => task.id !== action.payload)
         }
     }
 })
@@ -42,7 +40,7 @@ export const textSlice = createSlice({
     }
 })
 
-export const { addTask } = todoSlice.actions
+export const { addTask, deleteTask } = todoSlice.actions
 export const { setTextValue, clearTextValue } = textSlice.actions
 
 export const { reducer: todoReducer } = todoSlice

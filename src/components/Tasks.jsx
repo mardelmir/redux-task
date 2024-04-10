@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { deleteTask } from '../redux/todosSlice'
 
 export default function Tasks() {
     const dispatch = useDispatch()
@@ -6,7 +7,11 @@ export default function Tasks() {
 
     return (
         <ul>
-            {todo.map(task => <li key={task.id}>{task.text}</li>)}
+            {todo.map(task =>
+                <li key={task.id}>
+                    {task.text}
+                    <button onClick={()=> dispatch(deleteTask(task.id))}>Eliminar</button>
+                </li>)}
         </ul>
     )
 }

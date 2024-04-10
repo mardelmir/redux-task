@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { addTask } from '../redux/todosSlice'
 import { setTextValue, clearTextValue } from '../redux/todosSlice'
+import { addTask } from '../redux/todosSlice'
+
+// Remove on revision
 import { store } from '../redux/store.js'
 
 export default function TaskForm() {
@@ -11,6 +13,8 @@ export default function TaskForm() {
         e.preventDefault()
         dispatch(addTask(textValue))
         dispatch(clearTextValue())
+
+        // Remove on revision
         console.log(store.getState())
     }
 
