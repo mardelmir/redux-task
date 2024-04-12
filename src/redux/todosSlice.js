@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'; // Universally Unique Identifier, para garantizar un id único para cada tarea
 
-const initialState = {
-    todo: [{ id: uuidv4(), text: 'Nueva tarea', completed: false }]
-}
 export const todoSlice = createSlice({
     name: 'todo',
-    initialState,
+    initialState: { todo: [{ id: uuidv4(), text: 'Nueva tarea', completed: false }] },
     reducers: {
         addTask: (state, action) => {
             return {
